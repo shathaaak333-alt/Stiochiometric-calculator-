@@ -144,7 +144,7 @@ def process_stoichiometry(form_data):
     df["Mass Fraction"] = df["Final Mass (g)"] / df["Final Mass (g)"].sum()
 
     conv_list = [float(x.strip()) for x in multi_conv.split(",")]
-    comp_df = pd.DataFrame({"Species": df["Species"], "Initial Feed": df["Initial Feed (mol)"]})
+    comp_df = pd.DataFrame({"Species": df["Species"], "Final flow": df["Initial Feed (mol)"]})
     
     for x in conv_list:
         xi_temp = (n0_lim * x) / abs(nu_lim)
